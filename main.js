@@ -1,27 +1,3 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-  document.documentElement.classList.add('js');
-  
-  let isAndroid = false;
-  let isIOS = false;
-
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  if (/android/i.test(userAgent)) {
-    isAndroid = true;
-  }
-  if (userAgent.match(/iPhone|iPad|iPod/i)) {
-    isIOS = true;
-  }
-
-  if (isIOS) {
-    document.body.classList.add('ios');
-  }
-  if (isAndroid) {
-    document.body.classList.add('android');
-  }
-
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 // Password game
 
 // MANAGEMENT VARIABLES
@@ -1315,7 +1291,7 @@ const submitPassword = (password) => {
     document.getElementById('play-box').style.display = 'none';
     document.getElementById('warning-box').innerHTML = '';
     document.getElementById('results-box').style.display = 'block';
-    document.getElementById('password-results').innerHTML = 'Success: ' + password;
+    document.getElementById('password-results').innerHTML = 'success: ' + password;
     document.getElementById('time-stopwatch').innerHTML = timeClock;
     // Add the password to your final password
     finalPassword += password;
@@ -1596,8 +1572,3 @@ submitButton.disabled = true;
 const nextButton = document.getElementById('next-button');
 nextButton.addEventListener('click',continueGame);
 
-
-
-
-
-});
